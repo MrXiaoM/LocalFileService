@@ -19,7 +19,7 @@ class LocalFileService : FileService {
             if (file != null) {
                 val path = file.absolutePath
                 if (useFileBlacklist.all { !path.contains(it) }) {
-                    return "file:///$path"
+                    return "file:///${path.removePrefix("/")}"
                 }
             }
         }
@@ -36,7 +36,7 @@ class LocalFileService : FileService {
 
         return runCatching {
             file.writeBytes(bytes)
-            "file:///${file.absolutePath}"
+            "file:///${file.absolutePath.removePrefix("/")}"
         }.onFailure {
             LocalFileServicePlugin.logger.warning("保存 ${file.name} 文件时出错", it)
         }.getOrElse { "" }
