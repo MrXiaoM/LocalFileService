@@ -18,7 +18,7 @@ class LocalFileService : FileService {
             }?.takeIf { it.exists() }
             if (file != null) {
                 val path = file.absolutePath
-                if (useFileBlacklist.all { !path.contains(it) }) {
+                if (useFileBlacklist.all { !path.contains(it, true) }) {
                     return "file:///${path.removePrefix("/")}"
                 }
             }
