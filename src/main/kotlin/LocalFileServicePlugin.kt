@@ -75,7 +75,7 @@ object LocalFileServicePlugin : KotlinPlugin(
             get() = cleanDate.daysToMillis
 
         fun isFileExpired(file: File): Boolean {
-            return System.currentTimeMillis() - file.lastModified() < cleanDateMills
+            return System.currentTimeMillis() - file.lastModified() >= cleanDateMills
         }
         val tempFolderFile: File
             get() = if (tempFolder.isEmpty()) {
