@@ -33,8 +33,8 @@ mirai {
 }
 
 dependencies {
-    compileOnly("top.mrxiaom:overflow-core-api:2.16.0+")
+    compileOnly("top.mrxiaom.mirai:overflow-core-api:1.0.2")
     compileOnly("net.mamoe:mirai-core-utils:2.16.0")
 
-    testConsoleRuntime("top.mrxiaom:overflow-core:2.16.0+")
+    testConsoleRuntime("top.mrxiaom.mirai:overflow-core:1.0.2")
 }
