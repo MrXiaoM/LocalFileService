@@ -18,8 +18,8 @@ buildConfig {
 }
 
 repositories {
-    maven("https://maven.aliyun.com/repository/public")
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
+    maven("https://mirrors.huaweicloud.com/repository/maven/")
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
     mavenCentral()
 }
 
@@ -33,8 +33,8 @@ mirai {
 }
 
 dependencies {
-    compileOnly("top.mrxiaom.mirai:overflow-core-api:1.0.2")
+    compileOnly("top.mrxiaom.mirai:overflow-core-api:1.0.5")
     compileOnly("net.mamoe:mirai-core-utils:2.16.0")
 
-    testConsoleRuntime("top.mrxiaom.mirai:overflow-core:1.0.2")
+    testConsoleRuntime("top.mrxiaom.mirai:overflow-core:1.0.5")
 }
